@@ -22,7 +22,7 @@ window.onload = function(){
         .attr("y", 50) //position from top on the y (vertical) axis
         .style("fill", "#FFFFFF"); //fill color
 	// population data for 4 Wisconsin cities
-	     var cityPop = [
+	var cityPop = [
         { 
             city: 'Oshkosh',
             population: 66083
@@ -67,7 +67,7 @@ window.onload = function(){
             minPop, 
             maxPop
         ]);
-	 var circles = container.selectAll(".circles") //create an empty selection
+	var circles = container.selectAll(".circles") //create an empty selection
         .data(cityPop) //here we feed in an array
         .enter() //one of the great mysteries of the universe
         .append("circle") //inspect the HTML--holy crap, there's some circles there
@@ -101,13 +101,17 @@ window.onload = function(){
         .attr("class", "axis")
 		.attr("transform", "translate(50, 0)")
         .call(yAxis);
-	   var title = container.append("text")
+		
+		//title text
+	var title = container.append("text")
         .attr("class", "title")
         .attr("text-anchor", "middle")
         .attr("x", 450)
         .attr("y", 30)
         .text("Wisconsin City Populations");
-	 var labels = container.selectAll(".labels")
+		
+		
+	var labels = container.selectAll(".labels")
         .data(cityPop)
         .enter()
         .append("text")
